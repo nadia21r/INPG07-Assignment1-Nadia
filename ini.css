@@ -1,0 +1,65 @@
+.boxlatar {
+    height: 1160px;
+    background-color: rgb(231, 231, 231); 
+}
+
+.boxjarak {
+    height: 60px;
+    background-color: rgb(231, 231, 231);
+    margin:5px;
+}
+
+.boxid {
+    height: 200px;
+    background-color: rgb(255, 255, 255);
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: 7px;
+}
+
+.foto {
+    height: 160px;
+    margin: 20px;
+}
+
+.nama {
+    font: bold;
+}
+
+.program {
+    color: gray;
+}
+
+.pemisah {
+    width: 30%;
+    height: 155px;
+    background-color: black;
+    margin-top: 22px;
+}
+
+.font {
+    font-size: 3.5mm;
+    font-weight: bold;
+    font-family: Arial;
+}
+
+.biasa {
+    font-size: 3.5mm;
+    font-family: Arial;
+}
+
+.boxform {
+    height: 800px;
+    background-color: rgb(255, 255, 255);
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: 7px;
+}
+
+.warna-hijau {
+    background-color: green !important;
+}
+
+.klik:hover {
+    background-color: aqua !important;
+}
