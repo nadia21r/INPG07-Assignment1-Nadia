@@ -45,12 +45,12 @@
 
         <div class="p-1">
           <br>
-          <h2 class="nama">Nadia Ristiani</h2>
-          <p class="program">Web Developer Program</p>
+          <h2 class="nama" id="iniNama">Nadia Ristiani</h2>
+          <p class="program" id="iniRole">Web Developer Program</p>
           <div class="d-flex flex-row mb-3">
             <div class="p-2">
-              <a href="#" class="btn btn-primary">Kontak</a>
-              <a href="#" class="btn btn-outline-dark">Resume</a>
+              <button type="button" class="btn btn-primary" id="butEdit">Edit</button>
+              <button type="button" class="btn btn-outline-dark">Resume</button>
             </div>
           </div>
         </div>
@@ -67,7 +67,7 @@
 
         <div class="p-1">
           <p></p>  
-          <p class="font">Availability    </p>
+          <p class="font">Availability </p>
           <p class="font">Usia</p>
           <p class="font">Lokasi</p>
           <p class="font">Pengalaman</p>
@@ -77,13 +77,20 @@
         <div class="p-1"> </div>
         <div class="p-1">
           <p></p>  
-          <p class="biasa">Full Time</p>
-          <p class="biasa">20 Tahun</p>
-          <p class="biasa">Kota Depok, Indonesia</p>
-          <p class="biasa">2</p>
+          <p class="biasa" id="iniAvai">Full Time</p>
+          <div class="d-flex flex-row mb-3">
+            <div class="biasa" id="iniUs">20</div>
+            <div class="biasa">Tahun</div>
+          </div>
+          <p class="biasa" id="iniLok">Kota Depok, Indonesia</p>
+          <p class="biasa" id="iniPeng">2</p>
           <p class="biasa">
-            <a target="_blank" href="https://accounts.google.com/SignOutOptions?hl=id&continue=https://mail.google.com&service=mail" nadiaristiani212@gmail.com>nadiaristiani212@gmail.com</a>
+            <a target="_blank" href="#" style="color: blue;" id="iniEm">nadiaristiani212@gmail.com</a>
           </p>
+        </div>
+        
+        
+          
         </div>
       </div>
       
@@ -92,44 +99,48 @@
     <div class="boxjarak"></div>
 
     <div class="boxform">
-      <form>
+      <form id="formId" onsubmit="handleSubmit(event)" onreset="handleReset(event)">
         <div class="mb-3">
           <label style="font-weight: bold;" for="exampleInputNama" class="form-label">Nama</label>
-          <input type="text" class="form-control" id="exampleInputNama">
+          <input type="text" class="form-control" id="inputNama" >
         </div>
 
         <div class="mb-3">
           <label style="font-weight: bold;" for="exampleInputRole" class="form-label">Role</label>
-          <input type="text" class="form-control" id="exampleInputRole" placeholder="Masukkan peran anda sebagai">
+          <input type="text" class="form-control" id="inputProg" placeholder="Masukkan peran anda sebagai">
+        </div>
+
+        <div class="mb-3">
+          <label style="font-weight: bold;" for="exampleInputAvailability" class="form-label">Availability</label>
+          <input type="text" class="form-control" id="inputAvai">
         </div>
 
         <div class="mb-3">
           <label style="font-weight: bold;" for="exampleInputUmur" class="form-label">Age</label>
-          <input type="number" class="form-control" id="exampleInputUmur" placeholder="Masukkan umur anda">
+          <input type="number" class="form-control" id="inputUs" placeholder="Masukkan umur anda">
         </div>
 
         <div class="mb-3">
           <label style="font-weight: bold;" for="exampleInputLokasi" class="form-label">Lokasi</label>
-          <input type="text" class="form-control" id="exampleInputUmur">
+          <input type="text" class="form-control" id="inputLok">
         </div>
 
         <div class="mb-3">
           <label style="font-weight: bold;" for="exampleInputYear" class="form-label">Years Experience</label>
-          <input type="number" class="form-control" id="exampleInputUmur" placeholder="Berapa tahun pengalaman anda">
+          <input type="number" class="form-control" id="inputPenga" placeholder="Berapa tahun pengalaman anda">
         </div>
         
         <div class="mb-3">
           <label style="font-weight: bold;" for="exampleInputEmail1" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <input type="email" class="form-control" id="inputEm" aria-describedby="emailHelp">
         </div>
 
-        <div class="mb-3">
-          <label style="font-weight: bold;" for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1">
-        </div>
         <br>
         <div class="mb-3">
-          <button class="form-control btn btn-danger warna-hijau">Submit</button>
+          <button type="submit" class="form-control btn btn-danger warna-hijau">Submit</button>
+          <br>
+          <br>
+          <button type="reset" class="form-control btn btn-danger warna-merah">Reset</button>
         </div>
       </form>
     </div>
@@ -139,4 +150,85 @@
   </div>
 </div>
   
+<script>
+  var nama = document.getElementById("iniNama")
+  var role = document.getElementById("iniRole")
+  var avai = document.getElementById("iniAvai")
+  const usia = document.getElementById("iniUs")
+  var lokasi = document.getElementById("iniLok")
+  const penga = document.getElementById("iniPeng")
+  var email = document.getElementById("iniEm")
+
+  document.getElementById("inputNama").value = nama.innerText
+  document.getElementById("inputProg").value = role.innerText
+  document.getElementById("inputAvai").value = avai.innerText
+  document.getElementById("inputUs").value = usia.innerText
+  document.getElementById("inputLok").value = lokasi.innerText
+  document.getElementById("inputPenga").value = penga.innerText
+  document.getElementById("inputEm").value = email.innerText
+
+  function handleSubmit(event) {
+            var inNama = document.getElementById("inputNama")
+            var inRole = document.getElementById("inputProg")
+            var inAvai = document.getElementById("inputAvai")
+            const inUsia = document.getElementById("inputUs")
+            var inLokasi = document.getElementById("inputLok")
+            const inPenga = document.getElementById("inputPenga")
+            var inEmail = document.getElementById("inputEm")
+
+            document.getElementById("iniNama").innerText = inNama.value
+            document.getElementById("iniRole").innerText = inRole.value
+            document.getElementById("iniAvai").innerText = inAvai.value
+            document.getElementById("iniUs").innerText = inUsia.value
+            document.getElementById("iniLok").innerText = inLokasi.value
+            document.getElementById("iniPeng").innerText = inPenga.value
+            document.getElementById("iniEm").innerText = inEmail.value
+            const text_1 = document.getElementById("formId")
+                const display = text_1.style.display
+                if (display == "block") {
+                    console.log(display, "display dalam if yaitu none");
+                    text_1.style.display = "none"
+                } else {
+                    console.log(display, "display dalam else yaiu block");
+                    text_1.style.display = "block"
+                }
+                alert("Apakah anda yakin ingin mengedit data?")
+            event.preventDefault()
+        }
+
+        function handleReset(event) {
+            document.getElementById("inputNama").innerText = nama.value
+            document.getElementById("inputProg").innerText = role.value
+            document.getElementById("inputAvai").innerText = avai.value
+            document.getElementById("inputUs").innerText = usia.value
+            document.getElementById("iniLok").innerText = lokasi.value
+            document.getElementById("inputPenga").innerText = penga.value
+            document.getElementById("inputEm").innerText = email.value
+            const text_1 = document.getElementById("formId")
+                const display = text_1.style.display
+                if (display == "block") {
+                    console.log(display, "display dalam if yaitu none");
+                    text_1.style.display = "none"
+                } else {
+                    console.log(display, "display dalam else yaiu block");
+                    text_1.style.display = "block"
+                }
+                alert("Apakah anda yakin ingin mereset data kembali?")
+            event.preventHandler()
+        }
+
+  const buttonTest = document.getElementById("butEdit")
+        buttonTest.addEventListener("click", function()
+            {
+                const text_1 = document.getElementById("formId")
+                const display = text_1.style.display
+                if (display == "block") {
+                    text_1.style.display = "none"
+                } else {
+                    text_1.style.display = "block"
+                }
+                
+            }
+        )
+</script>
 </body>

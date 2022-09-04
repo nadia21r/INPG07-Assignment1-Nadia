@@ -1,5 +1,5 @@
 .boxlatar {
-    height: 1160px;
+    height: auto;
     background-color: rgb(231, 231, 231); 
 }
 
@@ -10,7 +10,7 @@
 }
 
 .boxid {
-    height: 200px;
+    height: auto;
     background-color: rgb(255, 255, 255);
     margin-left: 50px;
     margin-right: 50px;
@@ -62,4 +62,8 @@
 
 .klik:hover {
     background-color: aqua !important;
+}
+
+#formId {
+    display: none;
 }
